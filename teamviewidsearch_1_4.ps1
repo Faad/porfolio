@@ -13,7 +13,7 @@ If ( Get-Module -ListAvailable | Where-Object ($_.name -eq 'Active Directory') )
 
     $scriptblockteamid = Get-ItemProperty HKLM:\SOFTWARE\WOW6432Node\Teamviewer | Select-Object ClientID #Etsitään Teamviewer ID
     $GetName = Get-ChildItem -Path env:computername | Select-Object Value # Haetaan tietokoneen nimi env kautta.
-    $computers = Get-ADComputer -Filter * -SearchBase 'DC=sro,DC=local' | Select CN # Listataan tietokoneet, Voidaan määrittää haku johonkin muuhunkin container
+    $computers = Get-ADComputer -Filter * -SearchBase 'DC=,DC=' | Select CN # Listataan tietokoneet, Voidaan määrittää haku johonkin muuhunkin container
 
 
 
