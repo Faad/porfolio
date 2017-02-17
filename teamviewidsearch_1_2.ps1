@@ -12,7 +12,7 @@ If ( Get-Module -ListAvailable | Where-Object ($_.name -eq 'Active Directory') )
 
     $scriptblockteamid = Get-ItemProperty HKLM:\SOFTWARE\WOW6432Node\Teamviewer | Select-Object ClientID #Search Teamvier id
     $GetName = Get-ChildItem -Path env:computername | Select-Object Value # Search a computer name by queryn environmental variable env:computername 
-    $computers = Get-ADComputer -Filter * -SearchBase 'DC=sro,DC=local' | Select CN # Listing computer, Changing SearchBase information you can change where query is done.
+    $computers = Get-ADComputer -Filter * -SearchBase 'DC=,DC=' | Select CN # Listing computer, Changing SearchBase information you can change where query is done.
 
 
 
