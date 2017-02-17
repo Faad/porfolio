@@ -13,7 +13,7 @@ If ( Get-Module -ListAvailable | Where-Object ($_.name -eq 'Active Directory') )
 
         Import-Modules Active Directory
 		
-    $computers = Get-ADComputer -Filter * -SearchBase 'DC=sro,DC=local' | Select CN # Listataan tietokoneet, Voidaan määrittää haku johonkin muuhunkin container
+    $computers = Get-ADComputer -Filter * -SearchBase 'DC=,DC=' | Select CN # Listataan tietokoneet, Voidaan määrittää haku johonkin muuhunkin container
 
 	ForEach (  $computer in $computers ){
 	$TeamIDJob = Invoke-Command -ComputerName $computer -ScriptBlock {Get-ItemProperty HKLM:\SOFTWARE\WOW6432Node\Teamviewer | Select-Object ClientID} -AsJob |Wait-Job -Timeout 1 |  Get-Job | Receive-Job | Select-Object ClientId #totetutetaan toimenpide etsi Teamviewer ID koneesta.
