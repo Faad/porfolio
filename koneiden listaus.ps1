@@ -1,4 +1,4 @@
-﻿$adconnection = "OU=Asennus, OU=Kauniainen, OU=diak, DC=diak, DC=fi" ## määritetään mistä kysely tehdään
+﻿$adconnection = "OU=, OU=, OU=, DC=, DC=" ## määritetään mistä kysely tehdään
 $adpropertie= @("Name", "Created", "Description", "LastLogonDate", "OperatingSystem") ## määritetään kerättävät arvot
 $suomenkielinen= @{Expression= {$_.Name};Label="Nimi"},                          ## määritetään taulun nimet
                   @{Expression= {$_.Created};Label="Luotu"},
@@ -18,4 +18,4 @@ $suomenkielinen= @{Expression= {$_.Name};Label="Nimi"},                         
     
     ## jos siirtää csv tiedostoon dataa on käytettävä Select-Object
 
-    ##Get-ADComputer -Filter * -SearchBase "OU=Asennus,OU=Kauniainen,OU=diak,DC=diak,DC=fi"
+    ##Get-ADComputer -Filter * -SearchBase "OU=,OU=,OU=,DC=,DC="
