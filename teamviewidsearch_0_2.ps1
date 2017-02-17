@@ -1,4 +1,4 @@
-﻿$adserver = "DC=sro,DC=local" 
+﻿$adserver = "DC=,DC=" 
 $scriptblockteamid = Get-ItemProperty HKLM:\SOFTWARE\WOW6432Node\Teamviewer | Select-Object ClientID
 $Domainlist = {} 
 
